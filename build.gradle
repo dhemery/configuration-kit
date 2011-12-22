@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+allprojects {
+    eclipse {
+        jdt {
+            sourceCompatibility = 1.6
+            targetCompatibility = 1.6
+        }
+    }
+}
+
+
+defaultTasks 'build'
+
+dependencies {
+	compile fileTree(dir: 'lib/main', include: '*.jar')
+	testCompile fileTree(dir: 'lib/test', include: '*.jar')
+}
+
+archivesBaseName = 'dhemery-' + project.name
+
+task sourcesJar(type: Jar, dependsOn:classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+task all(dependsOn:[build,sourcesJar,javadocJar])
+
+version = '1.0.0'
