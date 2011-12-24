@@ -1,15 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
-
-allprojects {
-    eclipse {
-        jdt {
-            sourceCompatibility = 1.6
-            targetCompatibility = 1.6
-        }
-    }
-}
-
+apply plugin: 'idea'
 
 defaultTasks 'build'
 
