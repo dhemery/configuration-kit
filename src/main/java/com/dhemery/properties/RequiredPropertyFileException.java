@@ -1,6 +1,8 @@
 package com.dhemery.properties;
 
-@SuppressWarnings("serial")
+/**
+ * An attempt to read a properties file that does not exist.
+ */
 public class RequiredPropertyFileException extends RuntimeException {
 
 	public RequiredPropertyFileException(String filename) {

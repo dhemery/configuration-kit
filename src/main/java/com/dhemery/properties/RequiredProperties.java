@@ -47,6 +47,32 @@ public class RequiredProperties {
 		throw new RequiredPropertyException(propertyName);
 	}
 
+    /**
+     * @param propertyName
+     *            the name of a property.
+     * @return the Boolean value of the property.
+     * @throws RequiredPropertyException
+     *             if no such property is defined.
+     * @throws NumberFormatException
+     *             if the property's value cannot be parsed as an integer.
+     */
+	public Boolean getBoolean(String propertyName) {
+		return Boolean.parseBoolean(get(propertyName));
+	}
+
+	/**
+	 * @param propertyName
+	 *            the name of a property.
+	 * @return the Integer value of the property.
+	 * @throws RequiredPropertyException
+	 *             if no such property is defined.
+	 * @throws NumberFormatException
+	 *             if the property's value cannot be parsed as an integer.
+	 */
+	public Integer getInteger(String propertyName) {
+		return Integer.parseInt(get(propertyName));
+	}
+
 	private void loadProperties(String filename) {
 		InputStream propertiesFile;
 		try {
@@ -60,16 +86,10 @@ public class RequiredProperties {
 		}
 	}
 
-	/**
-	 * @param propertyName
-	 *            the name of a property.
-	 * @return the integer value of the property.
-	 * @throws RequiredPropertyException
-	 *             if no such property is defined.
-	 * @throws NumberFormatException
-	 *             if the property's value is not parsable as an integer.
-	 */
-	public Integer getInteger(String propertyName) {
-		return Integer.parseInt(get(propertyName));
-	}
+    /**
+     * @return the properties loaded from the properties files.
+     */
+    public Properties properties() {
+        return properties;
+    }
 }

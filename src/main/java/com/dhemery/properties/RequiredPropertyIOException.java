@@ -2,7 +2,9 @@ package com.dhemery.properties;
 
 import java.io.IOException;
 
-@SuppressWarnings("serial")
+/**
+ * An IO exception during attempt to read a properties file.
+ */
 public class RequiredPropertyIOException extends RuntimeException {
 	public RequiredPropertyIOException(String filename,
 			IOException originalException) {
