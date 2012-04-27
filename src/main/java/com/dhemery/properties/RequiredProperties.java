@@ -11,12 +11,13 @@ import java.util.Map;
  * @author Dale Emery
  */
 public class RequiredProperties {
-    Map<String,String> properties;
+    Map<String, String> properties;
+
     /**
      * @param properties the properties.
      */
-    public RequiredProperties(Map<String,String> properties) {
-        this.properties = new HashMap<String,String>(properties);
+    public RequiredProperties(Map<String, String> properties) {
+        this.properties = new HashMap<String, String>(properties);
     }
 
     /**

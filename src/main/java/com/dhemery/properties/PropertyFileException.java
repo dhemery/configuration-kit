@@ -1,6 +1,5 @@
 package com.dhemery.properties;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -13,6 +12,6 @@ public class PropertyFileException extends RuntimeException {
     }
 
     private static String explain(String filename) {
-        return String.format("Can not find property file %s",filename);
+        return String.format("Can not find property file %s", filename);
     }
 }

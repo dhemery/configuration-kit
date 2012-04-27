@@ -21,8 +21,8 @@ public class ReadProperties {
      * retained.
      *
      * @param propertyFileNames the names of the files from which to read properties.
-     * @throws PropertyFileException if a property file does not exist.
-     * @throws PropertyFileIOException   if an IO exception occurs while loading properties.
+     * @throws PropertyFileException   if a property file does not exist.
+     * @throws PropertyFileIOException if an IO exception occurs while loading properties.
      */
     public static ReadProperties fromFiles(String... propertyFileNames) {
         return new ReadProperties(propertyFileNames);
@@ -38,9 +38,9 @@ public class ReadProperties {
     /**
      * @return a map of the properties.
      */
-    public Map<String,String> asMap() {
-        Map<String,String> map = new HashMap<String, String>();
-        for(String name : properties.stringPropertyNames()) {
+    public Map<String, String> asMap() {
+        Map<String, String> map = new HashMap<String, String>();
+        for (String name : properties.stringPropertyNames()) {
             map.put(name, properties.getProperty(name));
         }
         return map;
