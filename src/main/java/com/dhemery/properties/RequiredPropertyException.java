@@ -5,7 +5,11 @@ package com.dhemery.properties;
  */
 public class RequiredPropertyException extends RuntimeException {
 
-	public RequiredPropertyException(String missingPropertyName) {
-		super(String.format("Please define property: %s", missingPropertyName));
-	}
+    public RequiredPropertyException(String missingPropertyName) {
+        super(explain(missingPropertyName));
+    }
+
+    private static String explain(String missingPropertyName) {
+        return String.format("No value for required property: %s", missingPropertyName);
+    }
 }

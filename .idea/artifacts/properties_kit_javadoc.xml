@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="properties-kit-javadoc">
+  <artifact type="jar" build-on-make="true" name="properties-kit-javadoc">
     <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
-    <root id="archive" name="properties-kit-1.1.0-javadoc.jar">
-      <element id="dir-copy" path="$PROJECT_DIR$/javadoc" />
+    <root id="archive" name="properties-kit-2.0.0-javadoc.jar">
+      <element id="dir-copy" path="$PROJECT_DIR$/out/javadoc" />
     </root>
   </artifact>
 </component>
