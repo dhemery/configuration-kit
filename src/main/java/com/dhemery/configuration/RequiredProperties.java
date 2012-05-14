@@ -1,4 +1,4 @@
-package com.dhemery.properties;
+package com.dhemery.configuration;
 
 import java.util.HashMap;
 import java.util.Map;

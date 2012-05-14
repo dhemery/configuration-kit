@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/properties-kit.iml" filepath="$PROJECT_DIR$/properties-kit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configuration-kit.iml" filepath="$PROJECT_DIR$/configuration-kit.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.dhemery.properties;
+package com.dhemery.configuration;
 
 /**
  * An attempt to get the value of a property that does not have a value.
