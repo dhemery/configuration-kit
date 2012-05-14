@@ -67,6 +67,16 @@ public class Configuration {
     }
 
     /**
+     * @param name the name of an option.
+     * @return the value of the option.
+     * @throws RequiredOptionException if the configuration does not define the option.
+     */
+    public String requiredOption(String name) {
+        if(defines(name)) return option(name);
+        throw new RequiredOptionException(name);
+    }
+
+    /**
      * Supply a value for an option.
      * If the configuration already has a value for the option,
      * the old value is replaced by the given value.
