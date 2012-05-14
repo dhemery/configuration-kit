@@ -15,13 +15,17 @@ public class Configuration {
     public Configuration() {
     }
 
-    private Configuration(Map<String, String> options) {
+    /**
+     * Create a {@code Configuration} with options copied from a {@link Map}.
+     * @param options a map that defines options.
+     */
+    public Configuration(Map<String, String> options) {
         this.options.putAll(options);
     }
 
     /**
      * Create a configuration with options read from properties files.
-     * @param filenames
+     * @param filenames the names of the files from which to read options.
      */
     public Configuration(String... filenames) {
         this(ReadProperties.fromFiles(filenames).asMap());
@@ -29,9 +33,10 @@ public class Configuration {
 
     /**
      * Create a configuration with the options copied from another configuration.
+     * @param other the configuration from which to copy options.
      */
-    public Configuration(Configuration configuration) {
-        this(configuration.options);
+    public Configuration(Configuration other) {
+        this(other.options);
     }
 
     /**
@@ -45,12 +50,12 @@ public class Configuration {
     /**
      * Merge a set of configuration options into this configuration.
      * If both configurations have values for an option,
-     * this configuration's value is replaced by the value from the given configuration.
+     * this configuration's value is replaced by the value from the other configuration.
      *
-     * @param configuration a set of configuration options.
+     * @param other a set of configuration options.
      */
-    public void merge(Configuration configuration) {
-        options.putAll(configuration.options);
+    public void merge(Configuration other) {
+        options.putAll(other.options);
     }
 
     /**

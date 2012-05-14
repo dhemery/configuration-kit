@@ -1,7 +1,7 @@
 package com.dhemery.configuration;
 
 /**
- * An item in a context.
+ * A reference to an item in a context.
  */
 public class ContextItem {
     private final String context;

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * A set of properties for which values must be defined.
  * Attempting to get an undefined property
- * causes a {@link RequiredPropertyException}.
+ * raises a {@link RequiredPropertyException}.
  *
  * @author Dale Emery
  */

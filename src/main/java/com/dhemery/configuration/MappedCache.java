@@ -11,34 +11,15 @@ import java.util.Map;
 public class MappedCache<K, V> implements Cache<K,V>{
     private final Map<K,V> valuesByKey = new HashMap<K,V>();
 
-    /**
-     * @param key a key.
-     * @return whether the cache has a value for {@code key}.
-     */
-    protected boolean hasKey(K key) {
-        return valuesByKey.containsKey(key);
-    }
-
-    /**
-     * Associates a value with a key.
-     * @param key a key.
-     * @param value the value to associate with {@code key}.
-     */
-    protected void store(K key, V value) {
-        valuesByKey.put(key, value);
-    }
-
-    /**
-     * @param key a key.
-     * @return the value associated with key, or null if no value is associated.
-     */
-    protected V storedValue(K key) {
+    @Override
+    public V value(K key, V defaultValue) {
+        if(!valuesByKey.containsKey(key)) valuesByKey.put(key, defaultValue);
         return valuesByKey.get(key);
     }
 
     @Override
-    public V value(K key, V defaultValue) {
-        if(!hasKey(key)) store(key, defaultValue);
-        return storedValue(key);
+    public V value(K key, CacheSource<K, V> source) {
+        if(!valuesByKey.containsKey(key)) valuesByKey.put(key, source.value(key));
+        return valuesByKey.get(key);
     }
 }
